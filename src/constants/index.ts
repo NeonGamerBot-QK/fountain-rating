@@ -5,6 +5,11 @@ export const mock_fountains:FountainResponseFromApi[] = [
         avg_pressure: 1000,
         avg_would_recommend: 0.2,
         total_entries: 10,
+        meta: {
+            name: "Fountain 1",
+            description: "This is a fountain",
+
+        },
         entries: [
             {
                 temp: 20,
@@ -24,7 +29,11 @@ export const mock_fountains:FountainResponseFromApi[] = [
             avg_temp: 20,
             avg_pressure: 100,
             avg_would_recommend: 0.5,
-            total_entries: 100,
+        total_entries: 100,
+        meta: {
+            name: "Fountain 2",
+            description: "This is a fountain",
+            },
             entries: [
                 {
                     temp: 20,
@@ -61,6 +70,11 @@ export type FountainResponseFromApi = {
     avg_would_recommend: number;
     total_entries: number;
     entries: Entry[];
+    meta: {
+        name: string;
+        description: string;
+        image_url?: string; // could be local but idrk atp
+    }
 }; 
 export interface FountainData {
     fountains: FountainResponseFromApi[]
